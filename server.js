@@ -73,6 +73,12 @@ app.delete('/api/todos/:todo_id', function (req, res) {
 
 });
 
+// application  ======================================
+app.get("*", function (req, res) {
+	res.sendfile("./public/index.html");
+})
+
+
 
 // listen (start app with node server.js) ======================================
 app.listen(8080);
