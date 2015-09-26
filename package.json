@@ -1,7 +1,9 @@
 {
   "name": "ToDoApp",
   "version": "0.0.0",
-  "start": "nodemon server.js",
+  "scripts": { 
+  	"start" : "nodemon server.js" 
+  },
   "description": "Simple ToDo application",
   "main": "server.js",
   "author": "Orodan",
