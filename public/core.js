@@ -30,9 +30,9 @@ function mainController($scope, $http) {
 	};
 
 	// Delete a todo after checking it
-	$scope.deleteTodo = function () {
+	$scope.deleteTodo = function (id) {
 
-		$http.delete('/api/todos' + id)
+		$http.delete('/api/todos/' + id)
 			.success(function(data) {
 				$scope.todos = data;
 				console.log(data);
