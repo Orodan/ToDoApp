@@ -7,7 +7,8 @@ var bodyParser = require("body-parser");
 var methodOverride = require("method-override");
 
 // configuration =================
-mongoose.connect('mongodb://localhost/ToDoDB');
+var database = require ("./config/database");
+mongoose.connect(database.url);
 
 app.use(express.static(__dirname + '/public'));							// set the static files location /public/img will be /img for users
 app.use(morgan('dev'));								// log every request to the console
