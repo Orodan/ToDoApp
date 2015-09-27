@@ -1,12 +1,13 @@
 // set up ========================
 var express = require("express");
 var app = express();
+// Set up ======================================================================
 var mongoose = require("mongoose");
 var morgan = require("morgan");
 var bodyParser = require("body-parser");
 var methodOverride = require("method-override");
 
-// configuration =================
+// configuration ===============================================================
 var database = require ("./config/database");
 mongoose.connect(database.url);
 
@@ -16,6 +17,9 @@ app.use(bodyParser.urlencoded({"extended":"true"}))	// parse application/x-www-f
 app.use(bodyParser.json());                                     // parse application/json
 app.use(bodyParser.json({ type: 'application/vnd.api+json' })); // parse application/vnd.api+json as json
 app.use(methodOverride());
+
+// routes ======================================================================
+require("./app/routes")(app);
 
 // listen (start app with node server.js) ======================================
 app.listen(8080);
