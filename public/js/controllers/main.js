@@ -8,8 +8,6 @@ angular.module('todoController', [])
 	.controller('mainController', function ($scope, $http, Todos) {
 		$scope.formData = {};
 
-		console.log("Test"); 
-
 		// GET ====================================================
 		// When landing on the page, get all todos and show them
 		Todos.get()
